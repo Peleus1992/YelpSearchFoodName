@@ -91,9 +91,10 @@ After the completion of table KEYWORD, it is OK to perform search on it. For exa
 
 ## 3. User Interface
 The following is a simple web app to perform search based on food name.
-<img src="https://github.com/Peleus1992/YelpSearchBasedOnFoodName/blob/master/screenshot/sushi.png"/>
-<img src="https://github.com/Peleus1992/YelpSearchBasedOnFoodName/blob/master/screenshot/ramen.png"/>
-<img src="https://github.com/Peleus1992/YelpSearchBasedOnFoodName/blob/master/screenshot/sashimi.png"/>
+<img src="https://github.com/Peleus1992/YelpSearchFoodName/blob/master/screenshot/1.png"/>
+<img src="https://github.com/Peleus1992/YelpSearchFoodName/blob/master/screenshot/2.png"/>
+<img src="https://github.com/Peleus1992/YelpSearchFoodName/blob/master/screenshot/3.png"/>
+<img src="https://github.com/Peleus1992/YelpSearchFoodName/blob/master/screenshot/4.png"/>
 
 ## 4. Deliverable
 This is simple heuristic project using NLP keyword extraction to improve the search engine of Yelp. Since the AlchemyLanguage has only 1000 requests upper limit every day, only a small group of restaurants is included. (Japanese restaurants at Waterloo, ON)
