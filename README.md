@@ -99,6 +99,6 @@ The following is a simple web app to perform search based on food name.
 ## 4. Deliverable
 This is simple heuristic project using NLP keyword extraction to improve the search engine of Yelp. Since the AlchemyLanguage has only 1000 requests upper limit every day, only a small group of restaurants is included. (Japanese restaurants at Waterloo, ON)
 
-Here is the link to the source code: https://github.com/Peleus1992/YelpSearchBasedOnFoodName
+Here is the link to the source code: https://github.com/Peleus1992/YelpSearchFoodName
 
 Here is the link to the web app: https://yelpsearchfood.appspot.com/
