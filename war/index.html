@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="yelpFoodSearch">
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script>
+	    function init() {
+	        gae.init("https://yelpsearchfood.appspot.com/_ah/api");
+	    }
+	</script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+	<script type="text/javascript" src="gae.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+
+  <body ng-controller="RestaurantController as restCtrl">
+    <!--  Header and Search Box -->
+    <header>
+      <h1 class="text-center">Yelp Search</h1>
+      <h2 class="text-center">- based on food name -</h2>
+      (Due to cost reason, only 13 Japanese restaurants around Waterloo, ON in Yelp Academic Dataset is are included in the database.)
+      <a href="registerData.html">Register More Data</a>
+      <form name="reviewForm" ng-submit="restCtrl.search()">
+      <div class="input-group col-md-12">
+      	
+		<input ng-model="restCtrl.query" type="text" class="form-control input-lg" maxlength="64" placeholder="Type in food name such as 'Sushi'. " />
+	 	<span class="input-group-btn">
+          <input class="btn btn-info btn-lg" type="submit" value="Search"/>
+            
+          
+      	</span>
+      </div>
+      </form>
+    </header>
+	
+    <!--  Restaurants Container  -->
+    <div class="list-group">
+      <!--  Restaurant Container  -->
+      <div class="list-group-item" ng-repeat="restaurant in restCtrl.restaurants">
+        <!--  Content  -->
+			<h4>{{restaurant.info.name}}</h4>
+			<ul class="list-unstyled">
+			  <li>
+			    <strong>Score</strong>
+			    : {{restaurant.foodScore}}</li>
+			  <li>
+			    <strong>Address</strong>
+			    : {{restaurant.info.full_address}}</li>
+			</ul>
+      </div>
+
+    </div>
+  </body>
+</html>

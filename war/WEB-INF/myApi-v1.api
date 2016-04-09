@@ -1,0 +1,554 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://yelpsearchfood.appspot.com/_ah/api",
+  "name" : "myApi",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "discovery" : [ "PUBLIC" ],
+  "adapter" : {
+    "bns" : "https://yelpsearchfood.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "gatech.edu.wguo64",
+  "ownerName" : "gatech.edu.wguo64",
+  "packagePath" : "ysfn",
+  "methods" : {
+    "myApi.getBusiness" : {
+      "path" : "getBusiness",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.BusinessEndpoint.getBusiness",
+      "request" : {
+        "parameters" : {
+          "businessId" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "myApi.insertBusiness" : {
+      "path" : "insertBusiness",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.BusinessEndpoint.insertBusiness",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "myApi.insertBusinessJsonString" : {
+      "path" : "insertBusinessJsonString",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.BusinessEndpoint.insertBusinessJsonString",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "myApi.removeBusiness" : {
+      "path" : "removeBusiness",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.BusinessEndpoint.removeBusiness",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "myApi.listBusiness" : {
+      "path" : "listBusiness",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.BusinessEndpoint.listBusiness",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "myApi.getKeyword" : {
+      "path" : "getKeyword",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.KeywordEndpoint.getKeyword",
+      "request" : {
+        "parameters" : {
+          "keywordId" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "myApi.listKeyword" : {
+      "path" : "listKeyword",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.KeywordEndpoint.listKeyword",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "myApi.searchKeyword" : {
+      "path" : "searchKeyword",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.KeywordEndpoint.searchKeyword",
+      "request" : {
+        "parameters" : {
+          "word" : {
+            "type" : "string",
+            "required" : true
+          },
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "myApi.insertKeyword" : {
+      "path" : "insertKeyword",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.KeywordEndpoint.insertKeyword",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "myApi.removeKeyword" : {
+      "path" : "removeKeyword",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.KeywordEndpoint.removeKeyword",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "myApi.listReview" : {
+      "path" : "listReview",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.ReviewEndpoint.listReview",
+      "request" : {
+        "parameters" : {
+          "businessId" : {
+            "type" : "string",
+            "required" : true
+          },
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "myApi.getReview" : {
+      "path" : "getReview",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.ReviewEndpoint.getReview",
+      "request" : {
+        "parameters" : {
+          "reviewId" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "myApi.insertReview" : {
+      "path" : "insertReview",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.ReviewEndpoint.insertReview",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "myApi.insertReviewJsonString" : {
+      "path" : "insertReviewJsonString",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.ReviewEndpoint.insertReviewJsonString",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "myApi.removeReview" : {
+      "path" : "removeReview",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.ReviewEndpoint.removeReview",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Business" : {
+        "id" : "Business",
+        "type" : "object",
+        "properties" : {
+          "businessId" : {
+            "type" : "string"
+          },
+          "info" : {
+            "type" : "string"
+          }
+        }
+      },
+      "File" : {
+        "id" : "File",
+        "type" : "object",
+        "properties" : {
+          "content" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_Business" : {
+        "id" : "CollectionResponse_Business",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Business"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Keyword" : {
+        "id" : "Keyword",
+        "type" : "object",
+        "properties" : {
+          "keywordId" : {
+            "type" : "string"
+          },
+          "keyword" : {
+            "type" : "string"
+          },
+          "businessId" : {
+            "type" : "string"
+          },
+          "positive" : {
+            "type" : "number"
+          },
+          "negative" : {
+            "type" : "number"
+          },
+          "neutral" : {
+            "type" : "number"
+          }
+        }
+      },
+      "CollectionResponse_Keyword" : {
+        "id" : "CollectionResponse_Keyword",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Keyword"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_Restaurant" : {
+        "id" : "CollectionResponse_Restaurant",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Restaurant"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Restaurant" : {
+        "id" : "Restaurant",
+        "type" : "object",
+        "properties" : {
+          "info" : {
+            "$ref" : "JsonMap"
+          },
+          "foodScore" : {
+            "type" : "number"
+          }
+        }
+      },
+      "JsonMap" : {
+        "id" : "JsonMap",
+        "type" : "object"
+      },
+      "CollectionResponse_Review" : {
+        "id" : "CollectionResponse_Review",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Review"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Review" : {
+        "id" : "Review",
+        "type" : "object",
+        "properties" : {
+          "reviewId" : {
+            "type" : "string"
+          },
+          "businessId" : {
+            "type" : "string"
+          },
+          "info" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "edu.gatech.wguo64.ysfn.BusinessEndpoint.getBusiness" : {
+        "response" : {
+          "$ref" : "Business"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.BusinessEndpoint.insertBusiness" : {
+        "request" : {
+          "$ref" : "Business"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.BusinessEndpoint.insertBusinessJsonString" : {
+        "request" : {
+          "$ref" : "File"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.BusinessEndpoint.removeBusiness" : {
+      },
+      "edu.gatech.wguo64.ysfn.BusinessEndpoint.listBusiness" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Business"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.KeywordEndpoint.getKeyword" : {
+        "response" : {
+          "$ref" : "Keyword"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.KeywordEndpoint.listKeyword" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Keyword"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.KeywordEndpoint.searchKeyword" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Restaurant"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.KeywordEndpoint.insertKeyword" : {
+        "request" : {
+          "$ref" : "Keyword"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.KeywordEndpoint.removeKeyword" : {
+      },
+      "edu.gatech.wguo64.ysfn.ReviewEndpoint.listReview" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Review"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.ReviewEndpoint.getReview" : {
+        "response" : {
+          "$ref" : "Review"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.ReviewEndpoint.insertReview" : {
+        "request" : {
+          "$ref" : "Review"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.ReviewEndpoint.insertReviewJsonString" : {
+        "request" : {
+          "$ref" : "File"
+        }
+      },
+      "edu.gatech.wguo64.ysfn.ReviewEndpoint.removeReview" : {
+      }
+    }
+  }
+}
