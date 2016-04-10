@@ -168,6 +168,7 @@ public class KeywordEndpoint {
 			throw new BadRequestException("Keyword of keywordId: + " + keywordId + " +does not exist");
 		}
 		ofy().delete().type(Keyword.class).id(keywordId).now();
+		
 	}
 	
 	

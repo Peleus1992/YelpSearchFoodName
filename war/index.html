@@ -3,13 +3,13 @@
   <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script type="text/javascript" src="gae.js"></script>
     <script>
 	    function init() {
 	        gae.init("https://yelpsearchfood.appspot.com/_ah/api");
 	    }
 	</script>
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
-	<script type="text/javascript" src="gae.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
 
@@ -18,7 +18,8 @@
     <header>
       <h1 class="text-center">Yelp Search</h1>
       <h2 class="text-center">- based on food name -</h2>
-      (Due to cost reason, only 13 Japanese restaurants around Waterloo, ON in Yelp Academic Dataset is are included in the database.)
+      <p>The source code is at <a href="https://github.com/Peleus1992/YelpSearchFoodName">Here</a>.</p>
+      <p>(Due to cost reason, only 13 Japanese restaurants around Waterloo, ON in Yelp Academic Dataset is are included in the database.)<p>
       <a href="registerData.html">Register More Data</a>
       <form name="reviewForm" ng-submit="restCtrl.search()">
       <div class="input-group col-md-12">

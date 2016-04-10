@@ -3,13 +3,13 @@
   <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script type="text/javascript" src="gae.js"></script>
     <script>
 	    function init() {
 	        gae.init("https://yelpsearchfood.appspot.com/_ah/api");
 	    }
 	</script>
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
-	<script type="text/javascript" src="gae.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
 
@@ -19,32 +19,15 @@
       <h1 class="text-center">Add More Data</h1>
       <a href="index.html">go back</a>
     </header>
-    <p>All the data should follow the <a href="https://www.yelp.com/dataset_challenge">Yelp Dataset</a></p>
+    <p>You can download <a href="https://www.yelp.com/dataset_challenge">Yelp Dataset</a> for a test.</p>
+    <h2>Add data to table BUSINESS</h2>
     <p>Business data should be in format of JSON array like:</p>
     <pre><code> 
 [{
   "business_id": "UsFtqoBl7naz8AVUBZMjQQ",
   "full_address": "202 McClure St\nDravosburg, PA 15034", 
-  "hours": {}, 
-  "open": true, 
-  "categories": ["Nightlife"], 
-  "city": "Dravosburg", 
-  "review_count": 4, 
   "name": "Clancy's Pub", 
-  "neighborhoods": [], 
-  "longitude": -79.8868138, 
-  "state": "PA", 
-  "stars": 3.5, 
-  "latitude": 40.3505527, 
-  "attributes": 
-  {
-    "Happy Hour": true, 
-    "Accepts Credit Cards": true, 
-    "Good For Groups": true, 
-    "Outdoor Seating": false, 
-    "Price Range": 1
-  }, 
-  "type": "business"
+  ...
 }, 
 ...]
 	</code></pre>
@@ -52,23 +35,15 @@
          <input type="file" id="businessData"/>
          <button id="addBusinessBtn" disabled="true" onclick="uploadBusiness()">upload</button>
       </div>
+      <h2>Add data to table REVIEW</h2>
       <p>Review should be in format of JSON array like:</p>
       <pre><code> 
 
 [{
-  "votes": 
-  {
-    "funny": 0, 
-    "useful": 0, 
-    "cool": 0
-  }, 
-  "user_id": "Iu6AxdBYGR4A0wspR9BYHA", 
   "review_id": "KPvLNJ21_4wbYNctrOwWdQ", 
-  "stars": 5, 
-  "date": "2014-02-13", 
+  "business_id": "5UmKMjUEUNdYWqANhGckJw", 
   "text": "Excellent food. Superb customer service. I miss the mario machines they used to have, but it's still a great place steeped in tradition.", 
-  "type": "review", 
-  "business_id": "5UmKMjUEUNdYWqANhGckJw"
+  ...
 }, 
 ...]
 

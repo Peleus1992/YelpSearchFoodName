@@ -28,6 +28,31 @@
   "ownerName" : "gatech.edu.wguo64",
   "packagePath" : "ysfn",
   "methods" : {
+    "myApi.listBusiness" : {
+      "path" : "listBusiness",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.BusinessEndpoint.listBusiness",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "myApi.getBusiness" : {
       "path" : "getBusiness",
       "httpMethod" : "GET",
@@ -100,31 +125,6 @@
       },
       "response" : {
         "body" : "empty"
-      }
-    },
-    "myApi.listBusiness" : {
-      "path" : "listBusiness",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "edu.gatech.wguo64.ysfn.BusinessEndpoint.listBusiness",
-      "request" : {
-        "parameters" : {
-          "cursor" : {
-            "type" : "string",
-            "required" : false
-          },
-          "limit" : {
-            "type" : "int32",
-            "required" : false
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
       }
     },
     "myApi.getKeyword" : {
@@ -268,6 +268,22 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "myApi.insertReview" : {
+      "path" : "insertReview",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "edu.gatech.wguo64.ysfn.ReviewEndpoint.insertReview",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
     "myApi.getReview" : {
       "path" : "getReview",
       "httpMethod" : "GET",
@@ -287,22 +303,6 @@
       },
       "response" : {
         "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "myApi.insertReview" : {
-      "path" : "insertReview",
-      "httpMethod" : "POST",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "edu.gatech.wguo64.ysfn.ReviewEndpoint.insertReview",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "empty"
       }
     },
     "myApi.insertReviewJsonString" : {
@@ -345,6 +345,21 @@
   },
   "descriptor" : {
     "schemas" : {
+      "CollectionResponse_Business" : {
+        "id" : "CollectionResponse_Business",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Business"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
       "Business" : {
         "id" : "Business",
         "type" : "object",
@@ -362,21 +377,6 @@
         "type" : "object",
         "properties" : {
           "content" : {
-            "type" : "string"
-          }
-        }
-      },
-      "CollectionResponse_Business" : {
-        "id" : "CollectionResponse_Business",
-        "type" : "object",
-        "properties" : {
-          "items" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "Business"
-            }
-          },
-          "nextPageToken" : {
             "type" : "string"
           }
         }
@@ -483,6 +483,11 @@
       }
     },
     "methods" : {
+      "edu.gatech.wguo64.ysfn.BusinessEndpoint.listBusiness" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Business"
+        }
+      },
       "edu.gatech.wguo64.ysfn.BusinessEndpoint.getBusiness" : {
         "response" : {
           "$ref" : "Business"
@@ -499,11 +504,6 @@
         }
       },
       "edu.gatech.wguo64.ysfn.BusinessEndpoint.removeBusiness" : {
-      },
-      "edu.gatech.wguo64.ysfn.BusinessEndpoint.listBusiness" : {
-        "response" : {
-          "$ref" : "CollectionResponse_Business"
-        }
       },
       "edu.gatech.wguo64.ysfn.KeywordEndpoint.getKeyword" : {
         "response" : {
@@ -532,13 +532,13 @@
           "$ref" : "CollectionResponse_Review"
         }
       },
-      "edu.gatech.wguo64.ysfn.ReviewEndpoint.getReview" : {
-        "response" : {
+      "edu.gatech.wguo64.ysfn.ReviewEndpoint.insertReview" : {
+        "request" : {
           "$ref" : "Review"
         }
       },
-      "edu.gatech.wguo64.ysfn.ReviewEndpoint.insertReview" : {
-        "request" : {
+      "edu.gatech.wguo64.ysfn.ReviewEndpoint.getReview" : {
+        "response" : {
           "$ref" : "Review"
         }
       },
